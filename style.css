@@ -9,14 +9,14 @@ body {
 
 #side-wrap {
   display: grid;
-  grid-template-columns: 1fr repeat(4, minmax(0, 272px)) 1fr;
-  grid-template-rows: 104px 215px 373px 373px 1fr;
+  grid-template-columns: 1fr repeat(4, minmax(0, 250px)) 1fr;
+  grid-template-rows: 104px 200px 1fr 1fr 100px;
   grid-gap: 10px;
   grid-template-areas:
     "header header header header header header"
     "featured-header featured-header featured-header featured-header featured-header featured-header"
-    ". featured-main featured-main featured-main featured-profile ."
-    ". content content content content ."
+    "sidebar featured-main featured-main featured-main featured-profile ."
+    "sidebar content content content additional-content ."
     ". footer footer footer footer .";
   height: 100vh;
   background-color: #eee;
@@ -39,7 +39,7 @@ body {
   color: white;
   text-align: center;
   font-size: 1.2rem;
-  line-height: 215px;
+  line-height: 200px;
   grid-area: featured-header;
 }
 
@@ -61,6 +61,15 @@ body {
   grid-area: featured-profile;
 }
 
+.sidebar {
+  background-color: #009688;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 373px;
+  grid-area: sidebar;
+}
+
 .content {
   background-color: #212121;
   color: white;
@@ -68,6 +77,15 @@ body {
   font-size: 1.2rem;
   line-height: 373px;
   grid-area: content;
+}
+
+.additional-content {
+  background-color: #607d8b;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 373px;
+  grid-area: additional-content;
 }
 
 .footer {
@@ -79,17 +97,23 @@ body {
   grid-area: footer;
 }
 
+/* Responsive Design */
 @media screen and (max-width: 768px) {
   #side-wrap {
     grid-template-areas:
       "header header header header header header"
       "featured-header featured-header featured-header featured-header featured-header featured-header"
       "featured-main featured-main featured-main featured-main featured-main featured-main"
+      "sidebar sidebar sidebar sidebar sidebar sidebar"
       "content content content content content content"
+      "additional-content additional-content additional-content additional-content additional-content additional-content"
       "footer footer footer footer footer footer";
+    grid-template-rows: auto;
   }
 
   .featured-profile {
     display: none;
   }
 }
+
+	
