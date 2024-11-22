@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5em;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+#side-wrap {
+  display: grid;
+  grid-template-columns: 1fr repeat(4, minmax(0, 272px)) 1fr;
+  grid-template-rows: 104px 215px 373px 373px 1fr;
+  grid-gap: 10px;
+  grid-template-areas:
+    "header header header header header header"
+    "featured-header featured-header featured-header featured-header featured-header featured-header"
+    ". featured-main featured-main featured-main featured-profile ."
+    ". content content content content ."
+    ". footer footer footer footer .";
+  height: 100vh;
+  background-color: #eee;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Section Styles */
+.header {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  line-height: 104px;
+  font-size: 1.5rem;
+  grid-area: header;
+}
+
+.featured-header {
+  background-color: #673ab7;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 215px;
+  grid-area: featured-header;
+}
+
+.featured-main {
+  background-color: #ff9800;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 373px;
+  grid-area: featured-main;
+}
+
+.featured-profile {
+  background-color: #ffc107;
+  color: black;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 373px;
+  grid-area: featured-profile;
+}
+
+.content {
+  background-color: #212121;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 373px;
+  grid-area: content;
+}
+
+.footer {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 50px;
+  grid-area: footer;
+}
+
+@media screen and (max-width: 768px) {
+  #side-wrap {
+    grid-template-areas:
+      "header header header header header header"
+      "featured-header featured-header featured-header featured-header featured-header featured-header"
+      "featured-main featured-main featured-main featured-main featured-main featured-main"
+      "content content content content content content"
+      "footer footer footer footer footer footer";
+  }
+
+  .featured-profile {
+    display: none;
+  }
+}
